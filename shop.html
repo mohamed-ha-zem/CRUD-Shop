@@ -1,0 +1,72 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shop.css">
+    <title>Mohamed Hazem</title>
+  </head>
+  <body>
+    <div class="crud">
+
+
+
+      <div class="head">
+        <h2>CRUD</h2>
+        <p>product management system</p>
+      </div>
+
+
+
+      <div class="input">
+        <input type="text" id="title" placeholder="title">
+        <div class="price">
+          <input onkeyup="sum()"type="text" id="price" placeholder="price">
+          <input onkeyup="sum()"type="text" id="taxes" placeholder="taxes">
+          <input onkeyup="sum()"type="text" id="ads" placeholder="ads">
+          <input onkeyup="sum()"type="text" id="discount" placeholder="discount">
+          <small id="total"></small>
+        </div>
+        <input type="text" id="count" placeholder="count">
+        <input type="text" id="category" placeholder="category">
+        <button id="create">Create</button>
+      </div>
+
+
+
+
+
+      <div class="output">
+        <div class="searchblock">
+          <input onkeyup="searchData(this.value)" type="text" placeholder="search" id="search">
+          <div class="search">
+            <button onclick="getMood(this.id)" id="title">Search By Time</button>
+            <button onclick="getMood(this.id)" id="category">Search By Category</button>
+          </div>
+        </div>
+      </div>
+      <div id="clear">
+
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>price</th>
+            <th>taxes</th>
+            <th>ads</th>
+            <th>discount</th>
+            <th>total</th>
+            <th>category</th>
+            <th>update</th>
+            <th>dalete</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          
+        </tbody>
+      </table>
+    </div>
+    <script src="shop.js"></script>
+  </body>

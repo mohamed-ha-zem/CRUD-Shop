@@ -88,8 +88,11 @@ button:hover{
     background-color:rgb(113, 19, 196) ;
 }
 
-
-
+@media (max-width: 768px) {
+    .crud {
+        width: fit-content;
+    }
+}
 
 
 

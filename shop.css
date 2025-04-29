@@ -1,98 +1,124 @@
-*{
+* {
     margin: 0;
-}
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
 
-.crud{
-    background-color: #222;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 50px;
-}
-
-
-.head{
-    text-align: center;
-    margin-bottom: 30px;
-}
-.input{
-    margin-bottom: 30px;
-}
-input{
-    width: 100%;
-    padding: 7px;
-    margin: 2px;
-    outline: 0;
-    border:0;
+  body {
     background-color: #111;
     color: #f2f2f2;
+    padding: 20px;
+  }
+
+  .crud {
+    max-width: 1200px;
+    margin: auto;
+    background-color: #222;
     border-radius: 20px;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1s ease-in-out;
+  }
 
-}
+  .head h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
 
-.input .price{
-    display: flex;
+  .head p {
+    font-size: 18px;
+    color: #aaa;
+  }
 
-}
-
-small{
-    background-color: rgb(76, 9, 9);
-    display: flex;
-    padding:6px;
-}
-
-small::before{
-    content:"Total:"
-}
-
-
-
-#create ,
-#clear{
+  .input input,
+  .price input,
+  .searchblock input,
+  button {
     width: 100%;
-}
-.search button{
-    width: 30%;
-}
-.search{
-    display: flex;
-    justify-content: space-around;
-}
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 15px;
+    background-color: #333;
+    color: #fff;
+    transition: 0.3s;
+  }
 
+  .price {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+  }
 
-button{
-    background-color: rgb(69, 5, 128);
-    outline: 0;
-    border: 0;
-    border-radius: 20px;
-    cursor: pointer;
-    padding: 7px;
-    margin: 4px;
-    color: #f2f2f2
-}
-
-table{
-    width: 100%;
-}
-
-/* hover */
-
-input:focus {
+  .input input:focus {
     transform: scale(1.05);
     background-color: #000;
-    transition: .5s;
-}
+  }
 
-button:hover{
+  .searchblock {
+    margin: 20px 0;
+  }
+
+  .search {
+    display: flex;
+    gap: 10px;
+  }
+
+  button {
+    background-color: #651fff;
+    cursor: pointer;
+  }
+
+  button:hover {
     transform: scale(1.1);
-    transition: .5s;
-    background-color:rgb(113, 19, 196) ;
-}
+    background-color: #7c4dff;
+  }
 
-@media (max-width: 768px) {
-    .crud {
-        width: fit-content;
+  small {
+    display: block;
+    padding: 10px;
+    background-color: rgb(76, 9, 9);
+    margin-top: 5px;
+    border-radius: 10px;
+  }
+
+  small::before {
+    content: "Total: ";
+  }
+
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    animation: fadeInUp 1s ease-in-out;
+  }
+
+  th, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #333;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(40px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  @media (max-width: 768px) {
+    .price {
+      grid-template-columns: repeat(2, 1fr);
     }
-}
 
-
-
+    .search {
+      flex-direction: column;
+    }
+  }
